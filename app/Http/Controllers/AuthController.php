@@ -38,7 +38,7 @@ class AuthController extends Controller
     /**
      * Inicio de sesión y creación de token
      */
-    public function login(Request $request)
+    public function login(Request $request, $id)
     {
         $request->validate([
             'email' => 'required|string|email',
@@ -67,6 +67,33 @@ class AuthController extends Controller
             'user' => $user
         ]);
     }
+
+    /**
+     * Edición de Usuario
+     */
+    public function edit(Request $request){
+        $request->validate([
+            'name' => 'required|string',
+            'surname' => 'required|string',
+            'cod' => 'required|string',
+            'email' => 'required|string|email|unique:users',
+            'password' => 'required|string'
+        ]);
+
+        $count = User::All()->count();
+        if($count > 0){
+            User::where('id','=', $id) -> update(array('name' => $request->name,
+                                                    'surname' => $request->surname,
+                                                    'cod' => $request->cod,
+                                                    'email' => $request->email,
+                                                    'password' => bcrypt($request->password)));
+        }
+
+        return response()->json([
+            'message' => 'Successfully edited user!'
+        ], 201);
+    }
+
 
     /**
      * Cierre de sesión (anular el token)
