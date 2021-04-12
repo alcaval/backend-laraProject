@@ -28,6 +28,7 @@ class Historial extends Model
         'tipo',
         'NDA',
         'NPA',
+        'datos',
         'user'
     ];
 }

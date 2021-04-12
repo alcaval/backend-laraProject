@@ -20,6 +20,7 @@ Route::get('/', function () {
 });
 
 Route::get('/allUsers',[UserController::class, 'getUsers']);
+Route::post('/edit/{id}',[UserController::class, 'edit']);
 Route::get('getH/{id}', [HistController::class, 'getHistorial']);
 Route::get('getHs', [HistController::class, 'getHistoriales']);
 Route::post('addH', [HistController::class, 'addHistorial']);

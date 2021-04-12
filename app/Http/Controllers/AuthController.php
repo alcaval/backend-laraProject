@@ -38,7 +38,7 @@ class AuthController extends Controller
     /**
      * Inicio de sesión y creación de token
      */
-    public function login(Request $request, $id)
+    public function login(Request $request)
     {
         $request->validate([
             'email' => 'required|string|email',
@@ -71,7 +71,7 @@ class AuthController extends Controller
     /**
      * Edición de Usuario
      */
-    public function edit(Request $request){
+    public function edit(Request $request, $id){
         $request->validate([
             'name' => 'required|string',
             'surname' => 'required|string',

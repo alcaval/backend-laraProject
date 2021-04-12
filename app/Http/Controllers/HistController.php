@@ -57,6 +57,7 @@ class HistController extends Controller
             'tipo' => 'required|string',
             'NDA' => 'required|string',
             'NPA' => 'required|string',
+            'datos' => 'required|string',
             'user' => 'required|string'
         ]);
 
@@ -72,6 +73,7 @@ class HistController extends Controller
                                                             'sexo' => $request->sexo,
                                                             'NDA' => $request->NDA,
                                                             'NPA' => $request->NPA,
+                                                            'datos' => $request->datos,
                                                             'tipo' => $request->tipo));
         }
     }
@@ -97,6 +99,7 @@ class HistController extends Controller
             'tipo' => 'required|string',
             'NDA' => 'required|string',
             'NPA' => 'required|string',
+            'datos' => 'required|string',
             'user' => 'required|string'
         ]);
 
@@ -112,6 +115,7 @@ class HistController extends Controller
             'tipo' => $request->tipo,
             'NDA' => $request->NDA,
             'NPA' => $request->NPA,
+            'datos' => $request->datos,
             'user' => $request->user,
         ]);
 

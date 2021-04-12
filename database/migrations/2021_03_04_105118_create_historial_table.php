@@ -27,6 +27,7 @@ class CreateHistorialTable extends Migration
             $table->string('tipo');
             $table->string('NDA');
             $table->string('NPA');
+            $table->string('datos');
             $table->string('user');
             $table->date('updated_at');
             $table->date('created_at');
